@@ -16,7 +16,6 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: white;
             position: relative;
-            overflow: hidden;
         }
 
         .container {
@@ -31,8 +30,7 @@
         }
 
         .logo {
-            width: min(200px, 60%); /* Escala en móviles */
-            /* opacity: 0.5; Usar punto, no coma */
+            width: min(200px, 60%);
             margin-bottom: 30px;
         }
 
@@ -45,14 +43,13 @@
         }
 
         .main-title {
-            font-size: clamp(24px, 5vw, 72px); /* Escala automática según ancho */
+            font-size: clamp(24px, 5vw, 72px);
             font-weight: 300;
             color: #000;
             line-height: 1.2;
             margin-bottom: 20px;
             max-width: 90%;
         }
-
 
         .launch-date {
             font-size: 16px;
@@ -64,11 +61,10 @@
         .info-section {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap; /* Permite salto de línea */
+            flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            margin-top: 40px; /* Separa en lugar de forzar posición */
-            position: static; /* Quita el absolute */
+            margin-top: 40px;
         }
 
         .info-column {
@@ -99,63 +95,27 @@
             text-decoration: underline;
         }
 
-        .contacts-inline {
-        margin-top: 10px; /* separa un poco del 'Made for rockstars' */
-        font-size: 16px;
-        font-weight: 300;
-        }
-
-        .contacts-inline a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .contacts-inline a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .main-title { font-size: 56px; }
-            .info-section { flex-direction: column; gap: 30px; bottom: 60px; }
-        }
-
+        /* Ocultar info extra en móvil */
         @media (max-width: 768px) {
-            .main-title { font-size: 42px; }
-            .brand-name { font-size: 16px; margin-bottom: 30px; }
-            .launch-date { font-size: 14px; margin-top: 30px; }
-        }
-
-        @media (max-width: 480px) {
-            .main-title { font-size: 32px; }
-            .container { padding: 20px 15px; }
-            .info-section { padding: 0 20px; bottom: 40px; }
+            .info-section {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="DELCASTILLOLOGO.png" alt="Del Castillo Logo" class="logo">
-        
         <div class="brand-name">Del Castillo</div>
-        
         <h1 class="main-title">New website coming soon.</h1>
-        
         <div class="launch-date">Made for rockstars</div>
-        
+
+        <!-- Sección de info (visible solo en escritorio) -->
         <div class="info-section">
             <div class="info-column">
                 <div class="info-title">Location</div>
-                <div class="info-content">Bogotá, Colombia<br></div>
+                <div class="info-content">Bogotá, Colombia</div>
             </div>
-            
-            <!-- <div class="info-column">
-                <div class="info-title">Contacts</div>
-                <div class="info-content">
-                    <a href="mailto:info@delcastillo.com">info@delcastillo.com</a><br>
-                </div>
-            </div> -->
-            
             <div class="info-column">
                 <div class="info-title">Follow Us</div>
                 <div class="info-content">
